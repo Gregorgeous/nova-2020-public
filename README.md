@@ -1,39 +1,18 @@
-# gatsby-starter-forty
+# "NOVA"- Warsaw-Zoliborz Scout District's new website
 
-**This is a starter for Gatsby.js V2.**
+**Based on [AJLKN's](https://aj.lkn.io/) "FORTY" theme: [gatsby-starter-forty](https://github.com/codebushi/gatsby-starter-forty) _(kudos to [Codebushi](https://codebushi.com/) for the Gatsby version of the theme! )_**
 
-**The older V1 version of this starter can be found on the v1 branch**
+<!-- TODO: add later once site is demo-deployed -->
+<!-- ## Preview
 
-Gatsby.js V2 starter based on the Forty site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters-and-themes/ for more Gatsby starters and templates.
+https://gatsby-forty.surge.sh -->
 
-## Preview
-
-https://gatsby-forty.surge.sh
+## Current status: In development (~5% DONE). <br/> _Expected done by January, 2020 (optimistic plan)_.
 
 ## Installation
 
 Install this starter (assuming Gatsby is installed) by running from your CLI:
 <br/>
-`gatsby new gatsby-starter-forty https://github.com/codebushi/gatsby-starter-forty`
+`gatsby new nova-warszawazoliborz https://github.com/Gregorgeous/nova-2020-public`
 
 Run `gatsby develop` in the terminal to start the dev site.
-
-## CSS Grid
-
-The grid on this site was replaced with a custom version, built using CSS Grid. It's a very simple 12 column grid that is disabled on mobile. To start using the grid, wrap the desired items with `grid-wrapper`. Items inside the `grid-wrapper` use the class `col-` followed by a number, which should add up to 12.
-
-Here is an example of using the grid, for a 3 column layout:
-
-```
-<div className="grid-wrapper">
-    <div className="col-4">
-        <p>Content Here</p>
-    </div>
-    <div className="col-4">
-        <p>Content Here</p>
-    </div>
-    <div className="col-4">
-        <p>Content Here</p>
-    </div>
-</div>
-```
