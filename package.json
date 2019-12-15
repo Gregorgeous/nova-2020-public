@@ -16,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^3.1.7",
     "gatsby-plugin-sass": "^2.1.14",
     "gatsby-plugin-sharp": "^2.3.7",
+    "gatsby-remark-images": "^3.1.38",
     "gatsby-source-filesystem": "^2.1.42",
     "gatsby-transformer-sharp": "^2.3.9",
     "netlify-cms-app": "^2.9.7",
