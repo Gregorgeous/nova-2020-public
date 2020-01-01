@@ -5,9 +5,11 @@ backend:
 publish_mode: editorial_workflow
 site_url: https://nova-warszawazoliborz.netlify.com/
 display_url: https://nova-warszawazoliborz.netlify.com/
+locale: "pl"
 
 media_folder: static/img
 public_folder: /img
+logo_url: https://raw.githubusercontent.com/Gregorgeous/nova-2020-public/master/static/img/zoliborz_logo.png
 
 collections:
   - name: "blog"
