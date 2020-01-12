@@ -14,6 +14,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
+exports.sourceNodes = ({ getNodesByType }) => {
+  const fileNodes = getNodesByType(`File`)
+  const markdownNodes = getNodesByType(`MarkdownRemark`)
+  fileNodes.forEach(imgNode => fmImagesToRelative(imgNode))
+  markdownNodes.forEach(mdNode => fmImagesToRelative(mdNode))
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
