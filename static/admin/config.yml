@@ -2,7 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-publish_mode: editorial_workflow
+# FIXME: This causes issues with saving at the moment
+# publish_mode: editorial_workflow
 site_url: https://nova-warszawazoliborz.netlify.com/
 display_url: https://nova-warszawazoliborz.netlify.com/
 locale: "pl"
@@ -18,11 +19,14 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
-      preview: true
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        default: "/img/default-post-img.jpg"
       - label: "Layout"
         name: "layout"
         widget: "select"
