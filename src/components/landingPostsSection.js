@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, Link, graphql } from 'gatsby'
 
-import pic01 from '../assets/images/pic01.jpg'
+import defaultPostImg from './../../static/img/default-post-img.jpg'
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -15,6 +15,9 @@ export default () => {
               title
               date(formatString: "DD MMMM, YYYY")
               description
+              thumbnail {
+                publicURL
+              }
             }
             fields {
               slug
@@ -28,7 +31,16 @@ export default () => {
   return (
     <section id="one" className="tiles">
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <article key={node.id} style={{ backgroundImage: `url(${pic01})` }}>
+        <article
+          key={node.id}
+          style={
+            node.frontmatter.thumbnail
+              ? {
+                  backgroundImage: `url(${node.frontmatter.thumbnail.publicURL})`,
+                }
+              : { backgroundImage: `url(${defaultPostImg})` }
+          }
+        >
           <header className="major">
             <h3>{node.frontmatter.title}</h3>
             <p>{node.frontmatter.description}</p>
