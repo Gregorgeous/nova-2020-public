@@ -9,7 +9,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       node,
       name: `slug`,
-      value: `/${fileNode.sourceInstanceName}/${node.frontmatter.title}`,
+      value: `/${fileNode.sourceInstanceName}/${fileNode.name}`,
     })
   }
 }
