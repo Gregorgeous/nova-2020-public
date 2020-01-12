@@ -14,6 +14,7 @@ export default ({ children }) => {
             frontmatter {
               title
               date(formatString: "DD MMMM, YYYY")
+              description
             }
             fields {
               slug
@@ -48,11 +49,8 @@ export default ({ children }) => {
         <article key={node.id} style={{ backgroundImage: `url(${pic01})` }}>
           <header className="major">
             <h3>{node.frontmatter.title}</h3>
-            <p>
-              {node.excerpt.length > 50
-                ? node.excerpt.substring(0, 50) + '...'
-                : node.excerpt}
-            </p>
+            <p>{node.frontmatter.description}</p>
+            <span>— {node.frontmatter.date}</span>
           </header>
           <Link to={node.fields.slug} className="link primary"></Link>
         </article>
