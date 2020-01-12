@@ -1,15 +1,23 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../layouts/SubPageLayout'
+import SubPageLayout from '../layouts/SubPageLayout'
+import MainLayout from '../layouts/MainLayout'
 export default ({ data }) => {
   const post = data.markdownRemark
+  const postContent = (
+    <div>
+      <h1>{post.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    </div>
+  )
   return (
-    <Layout>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
-    </Layout>
+    <>
+      {post.frontmatter.layout === 'SubPageLayout' ? (
+        <SubPageLayout> {postContent} </SubPageLayout>
+      ) : (
+        <MainLayout>{postContent}</MainLayout>
+      )}
+    </>
   )
 }
 export const query = graphql`
@@ -18,6 +26,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        layout
       }
     }
   }
