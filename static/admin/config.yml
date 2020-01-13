@@ -6,59 +6,68 @@ backend:
 # publish_mode: editorial_workflow
 site_url: https://nova-warszawazoliborz.netlify.com/
 display_url: https://nova-warszawazoliborz.netlify.com/
-locale: 'pl'
+locale: "pl"
 
 media_folder: static/img
 public_folder: /img
 logo_url: https://raw.githubusercontent.com/Gregorgeous/nova-2020-public/master/static/img/zoliborz_logo.png
 
 slug:
-  encoding: 'ascii'
+  encoding: "ascii"
   clean_accents: true
-  sanitize_replacement: '-'
+  sanitize_replacement: "-"
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - label: 'Thumbnail'
-        name: 'thumbnail'
-        widget: 'image'
-        default: '/img/default-post-img.jpg'
-      - label: 'Layout'
-        name: 'layout'
-        widget: 'select'
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        default: "/img/default-post-img.jpg"
+      - label: "Layout"
+        name: "layout"
+        widget: "select"
         options:
-          - { label: 'Main layout', value: 'MainLayout' }
-          - { label: 'Sub-page layout', value: 'SubPageLayout' }
+          - { label: "Main layout", value: "MainLayout" }
+          - { label: "Sub-page layout", value: "SubPageLayout" }
         default:
-          - { label: 'Main layout', value: 'MainLayout' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+          - { label: "Main layout", value: "MainLayout" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
       # OR ... (from: https://github.com/thomaswang/gatsby-personal-starter-blog/blob/master/static/admin/config.yml)
       # - { name: path, label: Path }
       # - { name: date, label: Date, widget: date }
       # - { name: title, label: Title }
       # - { name: description, label: Description }
       # - { name: body, label: Body, widget: markdown }
-  - label: 'Menu'
-    name: 'menu'
+  - label: "Menu"
+    name: "menu"
+    editor:
+      preview: false
     files:
-      - label: 'Main menu'
-        name: 'mainMenu'
-        file: 'content/menu/mainMenu.yml'
+      - label: "Main menu"
+        name: "mainMenu"
+        file: "content/menu/mainMenu.yml"
         fields:
-          - label: 'Main menu items'
-            label_singular: 'Main menu item'
+          - label: "Main menu items"
+            label_singular: "Main menu item"
             name: topLevelMainMenuItems
             widget: list
             fields:
-              - { label: 'Menu item name', name: menuItemName, widget: string }
-              - { label: URL, name: url, widget: string }
+              - { label: "Menu item name", name: menuItemName, widget: string }
+              - label: "URL"
+                name: url
+                widget: relation
+                collection: "blog"
+                searchFields: ["title"]
+                valueField: "slug"
+                searchFields: ["title", "description"]
+
