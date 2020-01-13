@@ -68,5 +68,5 @@ collections:
                 widget: relation
                 collection: "blog"
                 searchFields: ["title"]
-                valueField: "slug"
+                valueField: "{{slug}}"
                 displayFields: ["title", "description"]
