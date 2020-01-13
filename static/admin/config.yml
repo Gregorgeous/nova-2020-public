@@ -69,5 +69,4 @@ collections:
                 collection: "blog"
                 searchFields: ["title"]
                 valueField: "slug"
-                searchFields: ["title", "description"]
-
+                displayFields: ["title", "description"]
