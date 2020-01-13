@@ -71,14 +71,32 @@ collections:
                       name: menuItemName,
                       widget: string,
                     }
-              - label: "Blog post link"
-                name: blogPostLink
-                widget: object
-                fields:
-                  - label: "Blog post link"
-                    name: blogPostLink
-                    widget: relation
-                    collection: "blog"
-                    searchFields: ["title"]
-                    valueField: "title"
-                    displayFields: ["title"]
+                  - {
+                      label: "Manually put URL of the page",
+                      name: urlValue,
+                      widget: string,
+                    }
+              # WAIT-FOR-NETLIFY-UPDATE: This approch is currently stale due to NetlifyCMS limitation on getting the posts' slug ... https://github.com/netlify/netlify-cms/issues/450
+              # - label: "Blog post link"
+              #   name: blogPostLink
+              #   widget: object
+              #   fields:
+              #     - label: "Blog post link"
+              #       name: blogPostLink
+              #       widget: relation
+              #       collection: "blog"
+              #       searchFields: ["title"]
+              #       valueField: "..." # <-- This is where I would put this blog post's {slug} but it's currently not supported in NetlifyCMS :(
+              #       displayFields: ["title"]
+              ## TODO: This approach requires more work and a custom widget: https://github.com/netlify/netlify-cms/issues/800#issuecomment-520337072
+              # - label: "Page link"
+              #   name: pageLink
+              #   widget: object
+              #   fields:
+              #     - label: "Blog post link"
+              #       name: blogPostLink
+              #       widget: relation
+              #       collection: "blog"
+              #       searchFields: ["title"]
+              #       valueField: "..." # <-- This is where I would put this blog post's {slug} but it's currently not supported in NetlifyCMS :(
+              #       displayFields: ["title"]
