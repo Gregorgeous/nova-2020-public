@@ -20,6 +20,13 @@ module.exports = {
         name: `images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/menu`,
+        name: `menu`,
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-netlify-cms',
     'gatsby-transformer-sharp',
