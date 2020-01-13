@@ -65,7 +65,7 @@ collections:
               - label: "URL link"
                 name: urlLink
                 widget: object
-                field:
+                fields:
                   - {
                       label: "Menu item name",
                       name: menuItemName,
@@ -74,7 +74,7 @@ collections:
               - label: "Blog post link"
                 name: blogPostLink
                 widget: object
-                field:
+                fields:
                   - label: "Blog post link"
                     name: blogPostLink
                     widget: relation
