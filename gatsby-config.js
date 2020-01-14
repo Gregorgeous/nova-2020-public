@@ -28,7 +28,16 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-netlify-cms',
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/netlifyCMS-custom/cmsInit.js`, // default: undefined
+        publicPath: `admin`,
+        htmlTitle: `Panel Administratora: Hufiec W-wa Żoliborz`,
+        htmlFavicon: `${__dirname}/static/img/favicon-120px.png`,
+        includeRobots: false,
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
