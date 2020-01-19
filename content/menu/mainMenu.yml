@@ -1,0 +1,7 @@
+topLevelMainMenuItems:
+  - menuItemName: 'Strona główna '
+    type: urlLink
+    urlValue: 'https://nova-warszawazoliborz.netlify.com/'
+  - menuItemName: testowy blog post
+    type: urlLink
+    urlValue: 'https://nova-warszawazoliborz.netlify.com/blog/2020-01-06-test'
