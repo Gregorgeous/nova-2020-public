@@ -20,6 +20,7 @@ module.exports = {
         name: `images`,
       },
     },
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
